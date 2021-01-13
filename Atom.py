@@ -8,7 +8,6 @@ import subprocess
 from os import system
 import random
 import time
-import pyautogui
 
 os.system("cls")
 
