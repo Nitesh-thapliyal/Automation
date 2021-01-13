@@ -167,7 +167,7 @@ if __name__ == "__main__":
             show = '+'.join(query.split()[1:])
             webbrowser.open_new_tab(f"https://www.imdb.com/find?s=all&q={show}") 
             
-        elif "weather" in statement:
+        elif "weather" in query:
             api_key = "8ef61edcf1c576d65d836254e11ea420"
             base_url = "https://api.openweathermap.org/data/2.5/weather?"
             speak("whats the city name")
