@@ -8,6 +8,7 @@ import subprocess
 from os import system
 import random
 import time
+import pyautogui
 
 os.system("cls")
 
@@ -145,6 +146,17 @@ if __name__=="__main__":
             
         elif "bye" in query:
             speak("See you later")
+
+        elif 'screenshot' in query:
+            img = pyautogui.screenshot()
+            global val
+            val = 0
+            if sys.platform == 'linux':
+                img.save("./AtomImages/image-" + str(val) + ".png")
+                val += 1
+            if sys.platform == 'windows':
+                img.save(".\\AtomImages\\image-" + str(val) + ".png")
+                val += 1
             
         else: 
             speak("Can you say that again")
