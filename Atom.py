@@ -128,7 +128,11 @@ if __name__=="__main__":
             greetings = [f"hello sir, welcome" f"hello sir,nice to see you", f"welcome sir, how can i help you"]
             greet = greetings[random.randint(0,len(greetings)-1)]
             pyttsx3.speak(greet)  
-            
+
+        elif query.startswith('imdb'):
+            show = '+'.join(query.split()[1:])
+            webbrowser.open_new_tab(f"https://www.imdb.com/find?s=all&q={show}")  
+
         elif "open stackoverflow" in query:
             webbrowser.open_new_tab("https://stackoverflow.com/login")
             speak("Here is stackoverflow") 
