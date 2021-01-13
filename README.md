@@ -27,3 +27,4 @@
 - subprocess
 - random
 - time
+- requests
