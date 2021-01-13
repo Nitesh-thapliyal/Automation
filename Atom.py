@@ -151,9 +151,9 @@ if __name__ == "__main__":
             webbrowser.open_new_tab("https://stackoverflow.com/login")
             speak("Here is stackoverflow")
 
-        elif 'search' in statement:
-            statement = statement.replace("search", "")
-            webbrowser.open_new_tab(statement)
+        elif 'search' in query:
+            query = query.replace("search", "")
+            webbrowser.open_new_tab(query)
             time.sleep(5)
 
         elif "log off" in query or "sign out" in query:
@@ -163,16 +163,38 @@ if __name__ == "__main__":
 
         elif "bye" in query:
             speak("See you later")
+            
+        elif query.startswith('imdb'):
+            show = '+'.join(query.split()[1:])
+            webbrowser.open_new_tab(f"https://www.imdb.com/find?s=all&q={show}") 
+            
+        elif "weather" in statement:
+            api_key = "8ef61edcf1c576d65d836254e11ea420"
+            base_url = "https://api.openweathermap.org/data/2.5/weather?"
+            speak("whats the city name")
+            city_name = takeCommand()
+            complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+            response = requests.get(complete_url)
+            x = response.json()
+            if x["cod"] != "404":
+                y = x["main"]
+                current_temperature = y["temp"]
+                current_humidiy = y["humidity"]
+                z = x["weather"]
+                weather_description = z[0]["description"]
+                speak(" Temperature in kelvin unit is " +
+                      str(current_temperature) +
+                      "\n humidity in percentage is " +
+                      str(current_humidiy) +
+                      "\n description  " +
+                      str(weather_description))
+                print(" Temperature in kelvin unit = " +
+                      str(current_temperature) +
+                      "\n humidity (in percentage) = " +
+                      str(current_humidiy) +
+                      "\n description = " +
+                      str(weather_description))
 
-        elif 'screenshot' in query:
-            img = pyautogui.screenshot()
-            global val
-            val = 0
-            if sys.platform == 'linux':
-                img.save("./AtomImages/image-" + str(val) + ".png")
-                val += 1
-            if sys.platform == 'windows':
-                img.save(".\\AtomImages\\image-" + str(val) + ".png")
-                val += 1
+
         else:
             speak("Can you say that again")
