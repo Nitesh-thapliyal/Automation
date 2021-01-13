@@ -9,6 +9,14 @@
 - Atom can open apps in your pc
 - Atom can shutdown the pc
 
+> How to setup a local instance?:
+- clone this project-
+  `git clone https://github.com/Nitesh-thapliyal/Automation`
+- Install requirements-
+  `pip install -r requirements.txt`
+- Run the Assistant-
+  `python Atom.py`
+
 > Libraries required to run Atom:
 - pyttsx3
 - datetime
