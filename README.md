@@ -1,6 +1,6 @@
 # Automation
 
-> Atom is a Voice Assistant tan can do following tasks:
+> Atom is a Voice Assistant that can do following tasks:
 - Can serch for query in Wikipedia
 - Can open YouTube for you
 - Can open Stackoverflow website 
