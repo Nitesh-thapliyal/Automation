@@ -196,16 +196,16 @@ if __name__ == "__main__":
                       str(weather_description))
                 
              
-        elif 'login into a w s'in query:
+      elif 'login into a w s'in query:
             speak("Enter your credentials")
             os.system("aws configure")
             
-       elif 'check instances'in query:
+      elif 'check instances'in query:
             speak("Checking instances in AWS")
             os.system("aws ec2 describe-instances")
             
                  
-        elif 'create key pair'in query:
+      elif 'create key pair'in query:
             speak("Creating key pair in AWS")
             speak("key pair created successfully")
             os.system("aws ec2 create-key-pair --key-name your-key")
