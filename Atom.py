@@ -194,6 +194,40 @@ if __name__ == "__main__":
                       str(current_humidiy) +
                       "\n description = " +
                       str(weather_description))
+                
+             
+        elif 'login into a w s'in query:
+            speak("Enter your credentials")
+            os.system("aws configure")
+            
+       elif 'check instances'in query:
+            speak("Checking instances in AWS")
+            os.system("aws ec2 describe-instances")
+            
+                 
+        elif 'create key pair'in query:
+            speak("Creating key pair in AWS")
+            speak("key pair created successfully")
+            os.system("aws ec2 create-key-pair --key-name your-key")
+            
+        elif 'delete key pair'in query:
+            speak("Deleting key pair in AWS")
+            speak("key pair deleted successfully")
+            os.system("aws ec2 delete-key-pair --key-name your-key")
+            
+        elif 'check security group'in query:
+            speak("Checking Security group in AWS")
+            os.system("aws ec2 describe-security-groups")
+            
+        elif 'create security group'in query:
+            speak("Creating security group in AWS")
+            speak("security group created successfully")
+            os.system("aws ec2 create-security-group --group-name Nitesh --description name")
+            
+        elif 'delete security group'in query:
+            speak("Deleting Security group in AWS")
+            speak("Security group deleted successfully")
+            os.system("aws ec2 delete-security-group --group-name Name")
 
 
         else:
