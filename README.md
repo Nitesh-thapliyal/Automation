@@ -14,8 +14,10 @@
   `git clone https://github.com/Nitesh-thapliyal/Automation`
 - Install requirements-
   `pip install -r requirements.txt`
+- Install AWS CLI in your system
 - Run the Assistant-
   `python Atom.py`
+ 
 
 > Libraries required to run Atom:
 - pyttsx3
