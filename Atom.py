@@ -10,6 +10,7 @@ import random
 import time
 import requests
 import getpass
+import yfinance as yf
 
 os.system("cls")
 
@@ -203,6 +204,24 @@ if __name__ == "__main__":
                       str(current_humidiy) +
                       "\n description = " +
                       str(weather_description))
+                
+        elif "price_of" in query or "stock"in query:
+            search_term = query.lower().split(" of ")[-1].strip() 
+            stocks = {
+                "apple":"AAPL",
+                "microsoft":"MSFT",
+                "facebook":"FB",
+                "tesla":"TSLA",
+                "bitcoin":"BTC-USD"
+        }
+            try:
+                stock = stocks[search_term]
+                stock = yf.Ticker(stock)
+                price = stock.info["regularMarketPrice"]
+
+                pyttsx3.speak(f'price of {search_term} is {price} {stock.info["currency"]}')
+            except:
+                pyttsx3.speak('oops, something went wrong')
                 
              
         elif 'login into a w s'in query:
