@@ -9,6 +9,7 @@ from os import system
 import random
 import time
 import requests
+import getpass
 
 os.system("cls")
 
@@ -42,6 +43,14 @@ def colorText(text):
 f = open("Ascii.txt", "r")
 ascii = "".join(f.readlines())
 print(colorText(ascii))
+
+pyttsx3.speak("Enter your password")
+inpass = getpass.getpass ("Enter your password :")
+apass = "nitesh"
+if inpass!=apass:
+    pyttsx3.speak("Incorrect Password Try Again ")
+    exit()
+pyttsx3.speak("Access Granted") 
 
 
 # sapi5 is speech API developed by Microsoft, helps in synthesis and
